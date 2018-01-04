@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import gql from 'graphql-tag'
+import { LOGIN_MUTATION } from '@/graphql'
 
 export default {
   name: 'LogIn',
@@ -52,12 +52,7 @@ export default {
     login () {
       this.$apollo
         .mutate({
-          mutation: gql`
-            mutation($email: String!, $password: String!) {
-              login(email: $email, password: $password)
-            }
-          `,
-          // parameters
+          mutation: LOGIN_MUTATION,
           variables: {
             email: this.email,
             password: this.password
@@ -68,7 +63,7 @@ export default {
           localStorage.setItem('blog-app-token', response.data.login)
 
           // redirect to admin dashboard
-          this.$router.replace('/admin')
+          this.$router.replace('/admin/users')
         })
     }
   }

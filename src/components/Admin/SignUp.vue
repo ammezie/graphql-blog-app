@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import gql from 'graphql-tag'
+import { SIGNUP_MUTATION } from '@/graphql'
 
 export default {
   name: 'SignUp',
@@ -64,20 +64,7 @@ export default {
     signup () {
       this.$apollo
         .mutate({
-          mutation: gql`
-            mutation($username: String!, $email: String!, $password: String!) {
-              createUser(
-                username: $username
-                email: $email
-                password: $password
-              ) {
-                id
-                username
-                email
-              }
-            }
-          `,
-          // parameters
+          mutation: SIGNUP_MUTATION,
           variables: {
             username: this.username,
             email: this.email,
@@ -85,9 +72,6 @@ export default {
           }
         })
         .then(response => {
-          // clear inputs
-          this.username = this.email = this.password = ''
-
           // redirect to login page
           this.$router.replace('/login')
         })
