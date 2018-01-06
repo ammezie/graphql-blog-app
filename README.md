@@ -1,6 +1,20 @@
 # graphql-blog-app
 
-> A Vue.js project
+A blog app with GraphQL, Apollo client and Vue.js
+
+## Getting Started
+
+Clone the project repository by running the command below if you use SSH
+
+```bash
+git clone git@github.com:ammezie/graphql-blog-app.git
+```
+
+If you use https, use this instead
+
+```bash
+git clone https://github.com/ammezie/graphql-blog-app.git
+```
 
 ## Build Setup
 
@@ -10,12 +24,3 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
