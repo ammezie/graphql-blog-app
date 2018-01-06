@@ -62,8 +62,8 @@ export default {
           // save user token to localstorage
           localStorage.setItem('blog-app-token', response.data.login)
 
-          // redirect to admin dashboard
-          this.$router.replace('/admin/users')
+          // redirect user
+          this.$router.replace('/admin/posts')
         })
     }
   }

@@ -20,7 +20,7 @@
 import { POST_QUERY } from '@/graphql'
 
 export default {
-  name: 'Home',
+  name: 'SinglePost',
   data () {
     return {
       post: '',

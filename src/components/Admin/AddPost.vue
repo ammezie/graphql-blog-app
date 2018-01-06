@@ -1,60 +1,55 @@
 <template>
-  <div>
-    <Header/>
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-3">
-            <Menu/>
-          </div>
-          <div class="column is-9">
-            <h2 class="title">Add Post</h2>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-3">
+          <Menu/>
+        </div>
+        <div class="column is-9">
+          <h2 class="title">Add Post</h2>
 
-            <form method="post" @submit.prevent="addPost">
-              <div class="field">
-                <label class="label">Title</label>
-
-                <p class="control">
-                  <input
-                    class="input"
-                    v-model="title"
-                    placeholder="Post title">
-                </p>
-              </div>
-
-              <div class="field">
-                <label class="label">Content</label>
-
-                <p class="control">
-                  <textarea
-                    class="textarea"
-                    rows="10"
-                    v-model="content"
-                    placeholder="Post content"
-                    ></textarea>
-                </p>
-              </div>
+          <form method="post" @submit.prevent="addPost">
+            <div class="field">
+              <label class="label">Title</label>
 
               <p class="control">
-                <button class="button is-primary">Add Post</button>
+                <input
+                  class="input"
+                  v-model="title"
+                  placeholder="Post title">
               </p>
-            </form>
-          </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Content</label>
+
+              <p class="control">
+                <textarea
+                  class="textarea"
+                  rows="10"
+                  v-model="content"
+                  placeholder="Post content"
+                  ></textarea>
+              </p>
+            </div>
+
+            <p class="control">
+              <button class="button is-primary">Add Post</button>
+            </p>
+          </form>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import Header from '@/components/Admin/Header'
 import Menu from '@/components/Admin/Menu'
 import { ADD_POST_MUTATION, ALL_POSTS_QUERY } from '@/graphql'
 
 export default {
   name: 'AddPost',
   components: {
-    Header,
     Menu
   },
   data () {

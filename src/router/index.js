@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import SignUp from '@/components/Admin/SignUp'
 import LogIn from '@/components/Admin/LogIn'
 import Users from '@/components/Admin/Users'
-import UserProfile from '@/components/Admin/UserProfile'
+import UserDetails from '@/components/Admin/UserDetails'
 import Posts from '@/components/Admin/Posts'
 import AddPost from '@/components/Admin/AddPost'
 import SinglePost from '@/components/SinglePost'
@@ -45,8 +45,8 @@ export default new Router({
     },
     {
       path: '/admin/users/:id',
-      name: 'UserProfile',
-      component: UserProfile,
+      name: 'UserDetails',
+      component: UserDetails,
       props: true
     },
     {
